@@ -1,4 +1,5 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
 import { provideRouter } from '@angular/router';
