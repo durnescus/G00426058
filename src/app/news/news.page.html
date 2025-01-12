@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>News from {{ countryName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="noNewsFound">
+    <h2>No News found for {{ countryName }}</h2>
+  </div>
+
+  <ion-card *ngFor="let item of newsResults">
+    <img *ngIf="item.image_url" [src]="item.image_url" />
+    <ion-card-header>
+      <ion-card-title>{{ item.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ item.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

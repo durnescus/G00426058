@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Weather for {{ capital }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="weatherData">
+  <ion-card>
+    <!-- Display weather icon -->
+    <img
+      *ngIf="weatherData.weather && weatherData.weather[0]?.icon"
+      [src]="'https://openweathermap.org/img/wn/' + weatherData.weather[0].icon + '@2x.png'"
+      alt="Weather icon"
+    />
+
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{ weatherData.weather[0]?.description }}
+      </ion-card-subtitle>
+      <ion-card-title>
+        {{ weatherData.main?.temp }} ({{ unit }})
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
